@@ -35,3 +35,47 @@ Types Of Constructors:
             Static constructors are used to initializing the static members of the class and implicitly called with the execution 
             of the class. you do not need to initialze a class to call them.
             R: Static Constructors can only be called once in the life cycle of a class execution.
+            
+Enough talk.... Now time to see it working:
+ 
+Constructor Lab1:
+
+using System;
+
+namespace Constructor
+{
+    class ConstrLab1
+    {
+        //Instance Constructor
+        ConstrLab1()
+        {
+            Console.WriteLine("Calling Instance Constructor.");
+        }
+
+        //Static Constructor
+        static ConstrLab1()
+        {
+            Console.WriteLine("Calling Static Constructor.");
+        }
+
+        static void Main(string[] args)
+        {
+            ConstrLab1 obj1 = new ConstrLab1();
+            ConstrLab1 obj2 = new ConstrLab1();
+            Console.ReadKey();
+        }
+    }
+}
+
+
+Output: 
+Calling Static Constructor.
+Calling Instance Constructor.
+Calling Instance Constructor.
+
+Explanation of the Output:
+
+Since we created 2 instance of the Class, hence 2 times instance constuctor was called, and as we learned static constructor 
+executed only once per execution hence it is printed only once. Static Construtor executes first before any other code is 
+executed, so it prints first. 
+
