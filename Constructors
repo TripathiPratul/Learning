@@ -1,2 +1,30 @@
 ##Tags: OOPS, C#
 
+What are Constructors: 
+  Constructors are used to initialize the member of a class. They are invoked immediatly as soon as instance of the class is created. 
+      1- A class can have more that one Constructors (Constructor Oberloading).
+      2- A Construtor must have the same name as the class.
+      
+      class MyFirstClass{
+        int x;
+        // 0 argument constructor
+        MyFirstClass(){
+          x =10;
+        }
+        
+        //1 argument consructor
+        MyFirstClass(int z){
+          z = 10*z;
+        }
+        
+      }
+      
+      class MyOtherClass{
+        static voic Main(string[] args){
+          MyFirstClass obj = new MyFirstClass();   // This will call 0 arg constructor and x will be initialized with 10.
+          MyFirstClass obj1 = new MyFirstClass(2); // This will call 1 arg constructor and x will be initialized with 20.
+        }
+      }
+
+Types Of Constructors:
+  1- Instance Constructors: This type of constructor triggers every time an instance of the class is created.  
