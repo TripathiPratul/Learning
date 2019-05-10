@@ -14,7 +14,7 @@ What are Constructors:
         
         //1 argument consructor
         MyFirstClass(int z){
-          z = 10*z;
+          x = 10*z;
         }
         
       }
@@ -27,4 +27,11 @@ What are Constructors:
       }
 
 Types Of Constructors:
-  1- Instance Constructors: This type of constructor triggers every time an instance of the class is created.  
+  1- Instance Constructors: 
+            Constructors are of this type by default. This type of constructor triggers every time an instance of the class is 
+            created and are used to initialize non-static members of the class.  
+            
+  2- Static Constructors: 
+            Static constructors are used to initializing the static members of the class and implicitly called with the execution 
+            of the class. you do not need to initialze a class to call them.
+            R: Static Constructors can only be called once in the life cycle of a class execution.
