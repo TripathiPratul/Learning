@@ -86,18 +86,56 @@ executed only once per execution hence it is printed only once. Static Construto
 executed, so it prints first. 
 
 
-Constructor Inheritance ?
+Can we Inherit a Constructor ?
 
-C# allows base and derived class to have their own constructors. A class is allowed to inherit all members of the class but not 
+No, we can not inherit the constructor. C# allows base and derived class to have their own constructors. A class is allowed to inherit all members of the class but not 
 the constructor, because the constructor is not the member of the class. 
 
-If you provide the constructor in the derived class, you must provide an appropriate constructor in the base class. If you have provided a constructor in the derived class and no constructor in the base class, the compiler will flag an error.
-When you instantiate, the derived class, then first default constructor of base class (if exists) executes and then the constructor
-of derived class executes.
+But, we can call the constructor of base class from the derived class. If you provide the constructor in the derived class, you must provide an appropriate constructor in the base class. 
+If you have provided a constructor in the derived class and no constructor in the base class, the compiler will throw an error.
 
+Now, When you instantiate the derived class, then first, default constructor of base class executes (automatically) and then the constructor
+of derived class executes. so, the default constructor of base class can be called by calling the derived class's constructor(instantiate the derived class).
 
+What if I have parameterized constructor in base class which i want to call from derived class ? yes, this is doable with keyword
+'base'. you can call parameterized construcotr of base class from the derived class.let take an example
 
+Constructor Lab2:
 
+using System;
+
+namespace Constructor
+{
+    class ConstrLab2Base
+    {
+        //Instance Constructor
+        ConstrLab2Base()
+        {
+            Console.WriteLine("Calling base class's default Constructor.");
+        }
+        
+        ConstrLab2Base(int x)
+        {
+            Console.WriteLine("Calling base class's parameterized Constructor.");
+        }
+    }
+    
+    class ConstrLab2Derived : ConstrLab2Base{
+        ConstrLab2Derived(): base(a){
+            Console.WriteLine("Calling derived class's Constructor.");
+        }
+    }
+       static void Main(string[] args)
+        {
+            ConstrLab2Derived obj1 = new ConstrLab2Derived();
+            Console.ReadKey();
+        }
+    }
+}
+
+Output: 
+Calling base class's parameterized Constructor.
+Calling derived class's Constructor.
 
 
 
