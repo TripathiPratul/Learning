@@ -1,9 +1,13 @@
 ##Tags: OOPS, C#
 
 What are Constructors ?
-  Constructors are used to initialize the member of a class. They are invoked immediately and as soon as instance of the class is created. 
-      1- A class can have more that one Constructors (Constructor Overloading).
-      2- A Constructor must have the same name as the class.
+  A constructor is a special method of the class which gets automatically invoked whenever an instance of the class is created.
+  Constructors are used to initialize the member(s) of a class. They are invoked immediately and as soon as instance of the class is created. 
+      * A Constructor must have the same name as the class.
+      * A constructor doesn’t have any return type, not even void.
+      * A class can have any number of constructors.
+      * Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.
+      
       
       class MyFirstClass{
         int x;
@@ -16,7 +20,6 @@ What are Constructors ?
         MyFirstClass(int z){
           x = 10*z;
         }
-        
       }
       
       class MyOtherClass{
@@ -35,7 +38,9 @@ Types Of Constructors:
             Static constructors are used to initializing the static members of the class and implicitly called with the execution 
             of the class. you do not need to initialze a class to call them.
             R: Static Constructors can only be called once in the life cycle of a class execution.
-            
+            * Within a class, you can create only one static constructor.
+            * A static constructor cannot be a parameterized constructor.
+      
 Enough talk.... Now time to see it working:
  
 Constructor Lab1:
