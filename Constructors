@@ -23,7 +23,7 @@ What are Constructors ?
       }
       
       class MyOtherClass{
-        static voic Main(string[] args){
+        static void Main(string[] args){
           MyFirstClass obj = new MyFirstClass();   // This will call 0 arg constructor and x will be initialized with 10.
           MyFirstClass obj1 = new MyFirstClass(2); // This will call 1 arg constructor and x will be initialized with 20.
         }
@@ -32,7 +32,8 @@ What are Constructors ?
 Types Of Constructors:
   1- Instance Constructors: 
             Constructors are of this type by default. This type of constructor triggers every time an instance of the class is 
-            created and are used to initialize non-static members of the class.  
+            created and are used to initialize non-static members of the class. This type of construcotrs could be non-parameterized 
+            (AKA default) or parameterized.    
             
   2- Static Constructors: 
             Static constructors are used to initializing the static members of the class and implicitly called with the execution 
@@ -83,3 +84,20 @@ Explanation of the Output:
 Since we created 2 instance of the Class, hence 2 times instance constuctor was called, and as we learned static constructor 
 executed only once per execution hence it is printed only once. Static Construtor executes first before any other code is 
 executed, so it prints first. 
+
+
+Constructor Inheritance ?
+
+C# allows base and derived class to have their own constructors. A class is allowed to inherit all members of the class but not 
+the constructor, because the constructor is not the member of the class. 
+
+If you provide the constructor in the derived class, you must provide an appropriate constructor in the base class. If you have provided a constructor in the derived class and no constructor in the base class, the compiler will flag an error.
+When you instantiate, the derived class, then first default constructor of base class (if exists) executes and then the constructor
+of derived class executes.
+
+
+
+
+
+
+
